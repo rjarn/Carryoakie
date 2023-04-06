@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6i73n7r05dop"]
+
+[ext_resource type="Script" path="res://scripts/Home.gd" id="1_8wd7p"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8wd7p")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelTitle" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Carryoakie"
+horizontal_alignment = 1
+
+[node name="ButtonGoToRecordScene" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Record audio"
+
+[node name="ButtonGoToPlaybackScene" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Playback audio files"
+
+[node name="ButtonAmpSim" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Amp sim mode"
+
+[connection signal="pressed" from="VBoxContainer/ButtonGoToRecordScene" to="." method="_on_button_go_to_record_scene_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonGoToPlaybackScene" to="." method="_on_button_go_to_playback_scene_pressed"]
